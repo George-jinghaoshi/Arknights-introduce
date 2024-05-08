@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>character portrait</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			
+			body {
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				overflow: hidden;
+			    background:url(./img/character/bg.jpeg);
+			}
+			
+			
+			.shell{
+				width: 1700px;
+				margin: 0 auto;
+				height: 750px;
+				display: flex;
+				
+			}
+			
+			.card{
+				flex-basis: 15%;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			.card:not(:nth-child(1)){
+				margin-left: 20px;
+			}
+			
+			.card:hover{
+				overflow: initial;
+			}
+
+			
+			.box{
+				position: absolute;
+				top: 50px;
+				left: 0;
+				width: 100%;
+				height: 90%;
+				transition: all .1s cubic-bezier(0.165, 0.84, 0.44, 1);
+				overflow: hidden;
+				border-radius: 10px;
+				background-image: linear-gradient(180deg, dodgerblue, skyblue, #141414ce);
+			}
+			
+			.box>img{
+				object-fit: contain;
+				width:100%;
+				height: 100%;
+				transform: translate(50%, 10%) scale(3);
+				position: relative;
+				z-index: -1;
+			}
+			
+
+			.card:hover>.box img{
+				opacity: 0;
+			}
+			
+			.card:hover>.box{
+				transform: scaleY(1, 5);
+				background-image: initial;
+				background-color: none;
+				z-index: 2;
+				cursor: pointer;
+			}
+			
+			
+			.card h4{
+				position: absolute;
+				display: block;
+				width: 120px;
+				text-align: center;
+				color: rgba(255, 255, 255, 0.2);
+				bottom: 25px;
+				left: 50%;
+				transform: translate(-50%, -35%);
+				font-size: 28px;
+				z-index: 100;
+				transition: .2s;
+			}
+			
+			.card:hover h4{
+				color: black;
+				transform: translate(-50%, 250%);
+			}
+			
+			.card:hover .character{
+				opacity: 1;
+			}
+			
+			.card.>.character{
+				position: absolute;
+				top: -100px;
+				left: -400px;
+				width: 100%;
+				height: 100%;
+				z-index: 3;
+				pointer-events: none;
+			}
+			.character>img{
+				width: 720px;
+				height: 820px;
+				object-fit: contain;
+				opacity: 1;
+				transition: all .3s;
+				position: relative;
+				z-index: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="shell">
+			<div class="card">
+				<div class="box"> 
+			        <img src="img/character/lihui1.png">
+				</div>
+				<div class="character">
+				    <img src="img/character/lihui1.png">
+				</div>
+				<h4>Muelsyse</h4>
+			</div>
+			
+			<div class="card">
+				<div class="box"> 
+			        <img src="img/character/lihui2.png">
+				</div>
+				<div class="character">
+				    <img src="img/character/lihui2.png">
+				</div>
+				<h4>Chongyue</h4>
+			</div>
+			
+			<div class="card">
+				<div class="box"> 
+			        <img src="img/character/lihui3.png">
+				</div>
+				<div class="character">
+				    <img src="img/character/lihui3.png">
+				</div>
+				<h4>Platinum</h4>
+			</div>
+			
+			<div class="card">
+				<div class="box"> 
+			        <img src="img/character/lihui4.png">
+				</div>
+				<div class="character">
+				    <img src="img/character/lihui4.png">
+				</div>
+				<h4>Xi</h4>
+			</div>
+			
+			<div class="card">
+				<div class="box"> 
+			        <img src="img/character/lihui5.png">
+				</div>
+				<div class="character">
+				    <img src="img/character/lihui5.png">
+				</div>
+				<h4>Nian</h4>
+			</div>
+			
+			<div class="card">
+				<div class="box"> 
+			        <img src="img/character/lihui6.png">
+				</div>
+				<div class="character">
+				    <img src="img/character/lihui6.png">
+				</div>
+				<h4>Kal'tsit</h4>
+			</div>
+			
+			<div class="card">
+				<div class="box"> 
+			        <img src="img/character/lihui7.png">
+				</div>
+				<div class="character">
+				    <img src="img/character/lihui7.png">
+				</div>
+				<h4>Skadi </h4>
+			</div>
+			
+			<div class="card">
+				<div class="box"> 
+			        <img src="img/character/lihui8.png">
+				</div>
+				<div class="character">
+				    <img src="img/character/lihui8.png">
+				</div>
+				<h4>Texas</h4>
+			</div>
+		</div>
+	</body>
+</html>

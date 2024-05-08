@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Login</title>
+		<style>
+			*{
+				padding: 0;
+				margin:0;
+				outline:none;
+				border:none; 
+			}
+			body{
+				background: url(./img/login/loginbg.jpg) no-repeat center;
+				background-size: cover;
+				height: 100vh;
+				display: flex;
+				justify-content:center;
+				align-items:center;
+			}
+			.shell{
+				width: 300px;
+				height: 350px;
+				display: flex;
+				flex-direction:column;
+				justify-content:space-evenly;
+				align-items:center;
+				perspective: 1000px;
+			}
+			.top{
+			    width: 300px;
+			    display: flex;
+		    	cursor: pointer;
+		    	justify-content:space-evenly;
+			}
+			.off,.on{
+		    	color: #fff;
+		    	transition: .5s;
+		    	font:300 20px '';
+			}
+			.on{
+				opacity:  .5;
+			}
+			.button{
+				width: 60px;
+			    height: 25px;
+				background-color: rgb(255, 235, 167);
+				border-radius: 20px;
+				position: relative;
+			}
+			.ball{
+				position: absolute;
+				width: 25px;
+				height: 25px;
+				background-color: rgb(46, 45, 56);
+				border-radius: 50%;
+				transition: .5s;
+				box-shadow:0 0 10px #000;
+				left: 0;
+				transform: translate(-1px);
+			}
+			.bottom{
+				width: 500px;
+				height: 200px;
+				background-image:url(img/login/login.jpeg);
+				transform-style: preserve-3d;
+				position: relative;
+				transition: .7s;
+				border-radius:5px;
+			}
+			.bottom>div{
+				width: 100%;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: space-evenly;
+			}
+			.bottom h2{
+				color: #fff;
+			}
+			.bottom input{
+				width: 200px;
+				height: 25px;
+				padding: 0 10px;
+				background-color: rgb(31,32,41);
+				color:#fff;
+			}
+			.bottom button{
+				width: 80px;
+				height: 30px;
+				color:#333;
+				font-size: 15px;
+				background-color: rgb(255,235,167);
+				border-radius: 4px;
+				transition:.3s;
+				margin-bottom:10px;
+				cursor: pointer;
+			}
+			.bottom button:hover{
+				box-shadow:0 0 10px rgb(255,235,167);
+			}
+			.login{
+				transform:translateZ(70px);
+			}
+			.resister{
+				position: absolute;
+				top:0;
+				transform:translateZ(-70px) rotateY(180deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="shell">
+			<div class="top">
+				<span class="off">LOGIN</span>
+				<div class="button">
+					<div class="ball"></div>
+				</div>
+				<span class="on">REGISTER</span>
+			</div>
+			<div class="bottom">
+		        <div class="login">
+				    <h2>Login</h2>
+			    	<input type="text" placeholder="your account" >
+			    	<input type="text" placeholder="your password" >
+			    	<button>Login</button>
+				</div>
+				
+                <div class="resister">
+				    <h2>Register</h2>
+			    	<input type="text" placeholder="New account" >
+			    	<input type="text" placeholder="New password" >
+			    	<input type="text" placeholder="Confirm password" >
+			    	<button>Register</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+    <script>
+		let button = document.querySelector('.button')
+		let ball = document.querySelector('.ball')
+		let bottom = document.querySelector('.bottom')
+		let off = document.querySelector('.off')
+		let on = document.querySelector('.on')
+		let login = 0
+		button.addEventListener('click',()=>{
+			if (login==0) {
+				   login=1
+				   ball.style.left = 61+'%'
+				   on.style.opacity = 1
+				   off.style.opacity = .5
+				   bottom.style.transform ="rotateY(180deg)"
+			} else{
+				login=0
+				ball.style.left = 0+'%'
+				on.style.opacity = .5
+				off.style.opacity = 1
+				bottom.style.transform ="rotateY(0)"
+			}
+		})
+    </script>
+</body>
+</html>
